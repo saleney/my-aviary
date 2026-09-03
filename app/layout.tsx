@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,14 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "The Aviary — Your flock, flourishing",
-  description: "A warm, joyful home for your birds and their daily care.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "my-gentle-aviary.yuan-salene.chatgpt.site";
+  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
+  const image = `${protocol}://${host}/og.png`;
+  const title = "Salene’s Aviary — Birds I’ve met along the way";
+  const description = "A private field journal of 51 real encounters, 28 species, and six regions—grown from Merlin and eBird.";
+  return { title, description, icons:{icon:"/favicon.svg",shortcut:"/favicon.svg"}, openGraph:{title,description,images:[{url:image,width:1730,height:909,alt:"Salene’s Aviary field journal"}]}, twitter:{card:"summary_large_image",title,description,images:[image]} };
+}
 
 export default function RootLayout({
   children,
