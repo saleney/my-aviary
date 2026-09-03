@@ -16,3 +16,4 @@
 .detailArt img{object-fit:cover;object-position:center;background:transparent;transform:scale(1.02)}
 @media(max-width:720px){.speciesArt{height:auto}}
 @media(max-width:430px){.speciesArt{height:auto;aspect-ratio:1/1}}
+.journeyMeasure{margin:0;padding:18px 0 14px;font:700 9px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#94a99f;border-bottom:1px solid #ffffff25}
