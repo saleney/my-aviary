@@ -8,10 +8,11 @@
 .speciesArt .index{display:none}
 .speciesArt img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}.speciesCard:hover .speciesArt img{transform:scale(1.025)}.detailArt img{width:100%;height:100%;display:block;object-fit:contain;background:#f3ecdb}
 
-/* Preserve the complete square portraits instead of forcing them into a shallow crop. */
+/* Keep square portraits while slightly overscanning their pale source edges. */
 .speciesArt{height:auto;aspect-ratio:1/1}
-.speciesArt img{object-fit:cover;object-position:center}
+.speciesArt img{object-fit:cover;object-position:center;transform:scale(1.02)}
+.speciesCard:hover .speciesArt img{transform:scale(1.045)}
 .detailArt{height:auto;min-height:0;aspect-ratio:1/1;overflow:hidden}
-.detailArt img{object-fit:cover;object-position:center;background:transparent}
+.detailArt img{object-fit:cover;object-position:center;background:transparent;transform:scale(1.02)}
 @media(max-width:720px){.speciesArt{height:auto}}
 @media(max-width:430px){.speciesArt{height:auto;aspect-ratio:1/1}}
