@@ -7,3 +7,11 @@
 /* Catalog numbers are intentionally hidden. */
 .speciesArt .index{display:none}
 .speciesArt img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}.speciesCard:hover .speciesArt img{transform:scale(1.025)}.detailArt img{width:100%;height:100%;display:block;object-fit:contain;background:#f3ecdb}
+
+/* Preserve the complete square portraits instead of forcing them into a shallow crop. */
+.speciesArt{height:auto;aspect-ratio:1/1}
+.speciesArt img{object-fit:cover;object-position:center}
+.detailArt{height:auto;min-height:0;aspect-ratio:1/1;overflow:hidden}
+.detailArt img{object-fit:cover;object-position:center;background:transparent}
+@media(max-width:720px){.speciesArt{height:auto}}
+@media(max-width:430px){.speciesArt{height:auto;aspect-ratio:1/1}}
