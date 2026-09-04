@@ -38,6 +38,6 @@
 .toolbar .birdPicker{min-width:0;width:100%;border:0;border-radius:0;border-right:1px solid #17382c28;background:transparent;padding:10px 34px 10px 0;font:16px Georgia,serif;color:var(--forest)}
 @media(max-width:720px){.toolbar .birdPicker{border-right:0;border-bottom:1px solid #17382c28;padding-bottom:15px}}
 
-/* Compact region control; multiply removes pale canvas bands from the artwork. */
-.toolbar{grid-template-columns:minmax(210px,1fr) minmax(135px,auto) auto}.toolbar .regionPicker{min-width:135px}.speciesArt{isolation:isolate}.speciesArt img{mix-blend-mode:multiply}
+/* Compact region control. */
+.toolbar{grid-template-columns:minmax(210px,1fr) minmax(135px,auto) auto}.toolbar .regionPicker{min-width:135px}
 @media(max-width:720px){.toolbar{grid-template-columns:minmax(0,1fr)}.toolbar .regionPicker{width:100%}}
