@@ -11,14 +11,27 @@ function PagesApp() {
     const image = map?.querySelector<HTMLElement>(".worldMap");
     if (!map || !shell || !image) return;
 
+    const correctedAnchors: Record<string, { left: number; top: number }> = {
+      clay: { left: 0.16, top: 0.29 },
+      sage: { left: 0.277, top: 0.257 },
+      blue: { left: 0.294, top: 0.274 },
+      moss: { left: 0.786, top: 0.361 },
+      gold: { left: 0.815, top: 0.375 },
+      rose: { left: 0.817, top: 0.376 },
+    };
+
     const pins = Array.from(map.querySelectorAll<HTMLElement>(".mapPin"));
-    const pinAnchors = pins.map((pin) => ({
-      pin,
-      left: Number.parseFloat(pin.style.left) / 100,
-      top: Number.parseFloat(pin.style.top) / 100,
-      originalLeft: pin.style.left,
-      originalTop: pin.style.top,
-    }));
+    const pinAnchors = pins.map((pin) => {
+      const tone = ["clay", "sage", "blue", "moss", "gold", "rose"].find((name) => pin.classList.contains(name));
+      const corrected = tone ? correctedAnchors[tone] : undefined;
+      const left = corrected?.left ?? Number.parseFloat(pin.style.left) / 100;
+      const top = corrected?.top ?? Number.parseFloat(pin.style.top) / 100;
+      const originalLeft = `${left * 100}%`;
+      const originalTop = `${top * 100}%`;
+      pin.style.left = originalLeft;
+      pin.style.top = originalTop;
+      return { pin, left, top, originalLeft, originalTop };
+    });
 
     let scale = 1;
     let x = 0;
