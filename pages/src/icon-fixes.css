@@ -1,0 +1,74 @@
+/* Public-site icon normalization: avoid platform emoji/symbol glyphs. */
+
+/* Bird detail arrow: draw it instead of relying on the Unicode ↗ glyph. */
+.mapBirdLink span[aria-hidden="true"] {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  font-size: 0;
+  line-height: 0;
+  color: currentColor;
+}
+.mapBirdLink span[aria-hidden="true"]::before {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+.mapBirdLink span[aria-hidden="true"]::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  width: 11px;
+  height: 1.5px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+/* Popup close: draw a clean X rather than using the × text glyph. */
+.mapPopupClose {
+  font-size: 0 !important;
+  position: absolute;
+}
+.mapPopupClose::before,
+.mapPopupClose::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 1.5px;
+  background: currentColor;
+  transform-origin: center;
+}
+.mapPopupClose::before { transform: translate(-50%, -50%) rotate(45deg); }
+.mapPopupClose::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* Aviary mark: keep the same quiet four-point sparkle without a Unicode glyph. */
+.jbrand i {
+  position: relative;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  font-size: 0 !important;
+  vertical-align: -1px;
+}
+.jbrand i::before,
+.jbrand i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: currentColor;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+.jbrand i::before { width: 2px; height: 13px; }
+.jbrand i::after { width: 13px; height: 2px; }
