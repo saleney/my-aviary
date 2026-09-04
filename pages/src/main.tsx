@@ -8,7 +8,17 @@ function PagesApp() {
   useEffect(() => {
     const map = document.querySelector<HTMLElement>(".encounterMap");
     const shell = map?.closest<HTMLElement>(".mapShell");
-    if (!map || !shell) return;
+    const image = map?.querySelector<HTMLElement>(".worldMap");
+    if (!map || !shell || !image) return;
+
+    const pins = Array.from(map.querySelectorAll<HTMLElement>(".mapPin"));
+    const pinAnchors = pins.map((pin) => ({
+      pin,
+      left: Number.parseFloat(pin.style.left) / 100,
+      top: Number.parseFloat(pin.style.top) / 100,
+      originalLeft: pin.style.left,
+      originalTop: pin.style.top,
+    }));
 
     let scale = 1;
     let x = 0;
@@ -17,7 +27,7 @@ function PagesApp() {
     const pointers = new Map<number, { x: number; y: number }>();
 
     const clampPan = () => {
-      const rect = shell.getBoundingClientRect();
+      const rect = map.getBoundingClientRect();
       const maxX = Math.max(0, ((scale - 1) * rect.width) / 2);
       const maxY = Math.max(0, ((scale - 1) * rect.height) / 2);
       x = Math.max(-maxX, Math.min(maxX, x));
@@ -26,7 +36,21 @@ function PagesApp() {
 
     const apply = () => {
       clampPan();
-      map.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+      const rect = map.getBoundingClientRect();
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      image.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+
+      for (const anchor of pinAnchors) {
+        const originalX = anchor.left * rect.width;
+        const originalY = anchor.top * rect.height;
+        const nextX = cx + (originalX - cx) * scale + x;
+        const nextY = cy + (originalY - cy) * scale + y;
+        anchor.pin.style.left = `${nextX}px`;
+        anchor.pin.style.top = `${nextY}px`;
+      }
+
       shell.classList.toggle("is-zoomed", scale > 1.01);
     };
 
@@ -35,7 +59,12 @@ function PagesApp() {
       x = 0;
       y = 0;
       lastDistance = null;
-      apply();
+      image.style.transform = "";
+      for (const anchor of pinAnchors) {
+        anchor.pin.style.left = anchor.originalLeft;
+        anchor.pin.style.top = anchor.originalTop;
+      }
+      shell.classList.remove("is-zoomed");
     };
 
     const resetButton = document.createElement("button");
@@ -100,11 +129,16 @@ function PagesApp() {
       if (pointers.size < 2) lastDistance = null;
     };
 
+    const onResize = () => {
+      if (scale > 1.01) apply();
+    };
+
     map.addEventListener("wheel", onWheel, { passive: false });
     map.addEventListener("pointerdown", onPointerDown);
     map.addEventListener("pointermove", onPointerMove);
     map.addEventListener("pointerup", onPointerEnd);
     map.addEventListener("pointercancel", onPointerEnd);
+    window.addEventListener("resize", onResize);
 
     return () => {
       map.removeEventListener("wheel", onWheel);
@@ -112,9 +146,14 @@ function PagesApp() {
       map.removeEventListener("pointermove", onPointerMove);
       map.removeEventListener("pointerup", onPointerEnd);
       map.removeEventListener("pointercancel", onPointerEnd);
+      window.removeEventListener("resize", onResize);
       resetButton.removeEventListener("click", reset);
       resetButton.remove();
-      map.style.transform = "";
+      image.style.transform = "";
+      for (const anchor of pinAnchors) {
+        anchor.pin.style.left = anchor.originalLeft;
+        anchor.pin.style.top = anchor.originalTop;
+      }
       shell.classList.remove("is-zoomed");
     };
   }, []);
