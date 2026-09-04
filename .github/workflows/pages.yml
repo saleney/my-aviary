@@ -34,6 +34,7 @@ jobs:
             mv dist/client/my-aviary/_next dist/client/_next
             rmdir dist/client/my-aviary
           fi
+          touch dist/client/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
