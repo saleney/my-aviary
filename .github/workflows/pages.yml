@@ -27,6 +27,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm install
+      - name: Set public asset base
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('app/AviaryJournal.tsx')
+          s = p.read_text()
+          s = s.replace('const assetBase=process.env.NEXT_PUBLIC_BASE_PATH ?? "";', 'const assetBase="/my-aviary";')
+          p.write_text(s)
+          PY
       - run: npm run build:pages
       - run: touch dist/pages/.nojekyll
       - uses: actions/configure-pages@v5
