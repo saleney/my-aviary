@@ -2,6 +2,8 @@
 
 A living field journal built from my Merlin and eBird history: 51 encounters, 28 species, six broad regions, and the quiet year between listening seasons.
 
+Visit it at [saleney.github.io/my-aviary](https://saleney.github.io/my-aviary/).
+
 The experience begins with a map of where I heard each bird, follows the rhythm of return from 2024 to 2026, and ends in a searchable field guide with species notes and illustrated portraits.
 
 Exact encounter coordinates are intentionally not published. Locations are presented only as broad regions.
