@@ -51,7 +51,7 @@ html{scroll-behavior:smooth;scroll-snap-type:y proximity}.scrollChapter{min-heig
 @media(max-width:720px){html{scroll-snap-type:y proximity}.scrollChapter{transform:translateY(22px)}.jhero{height:100svh;min-height:620px;padding-top:125px}.places{padding-top:72px;padding-bottom:72px}.encounterMap{height:min(58svh,520px);aspect-ratio:auto}.journeys{min-height:100svh;align-content:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}.scrollChapter{opacity:1;transform:none;transition:none}}
 
-/* The field guide teaches recognition; encounter history lives in the map and detail view. */
-.speciesCopy{min-height:185px}.speciesCopy h3{margin-top:0}.speciesCopy .birdBlurb{margin:22px 0 0;font:15px/1.5 Georgia,serif;color:#526a5f}.journal footer p{max-width:760px;text-align:right;line-height:1.6}.journal footer p a{color:#e5b45d;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:720px){.speciesCopy{min-height:175px}.journal footer p{text-align:left}}
-@media(max-width:430px){.speciesCopy{min-height:0}.speciesCopy .birdBlurb{margin-top:14px;font-size:14px}}
+/* The cards stay quiet; field notes appear after opening a bird. */
+.speciesCopy{min-height:105px}.speciesCopy h3{margin-top:0}.detailBlurb{margin:28px 0 0;font:18px/1.55 Georgia,serif;color:#526a5f}.detailBody dl{margin-top:32px}.journal footer p{max-width:760px;text-align:right;line-height:1.6}.journal footer p a{color:#e5b45d;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:720px){.speciesCopy{min-height:100px}.journal footer p{text-align:left}}
+@media(max-width:430px){.speciesCopy{min-height:0}.detailBlurb{font-size:17px}}
