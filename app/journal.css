@@ -41,3 +41,7 @@
 /* Compact region control. */
 .toolbar{grid-template-columns:minmax(210px,1fr) minmax(135px,auto) auto}.toolbar .regionPicker{min-width:135px}
 @media(max-width:720px){.toolbar{grid-template-columns:minmax(0,1fr)}.toolbar .regionPicker{width:100%}}
+
+/* Lead with the journey and keep the opening concise. */
+.jhero{min-height:700px}.placesHead{margin-bottom:34px}.mapBirdLink{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;border:0;background:transparent;color:inherit;padding:0;font:inherit;text-align:left;cursor:pointer}.mapBirdLink span{color:#e5b45d;transition:transform .2s}.mapBirdLink:hover span,.mapBirdLink:focus-visible span{transform:translate(3px,-3px)}.mapBirdLink:focus-visible{outline:2px solid #e5b45d;outline-offset:4px}
+@media(max-width:720px){.jhero{min-height:680px}}
