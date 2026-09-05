@@ -13,11 +13,11 @@ function PagesApp() {
 
     const correctedAnchors: Record<string, { left: number; top: number }> = {
       clay: { left: 0.16, top: 0.29 },
-      sage: { left: 0.277, top: 0.257 },
-      blue: { left: 0.294, top: 0.274 },
-      moss: { left: 0.786, top: 0.361 },
-      gold: { left: 0.815, top: 0.375 },
-      rose: { left: 0.817, top: 0.376 },
+      sage: { left: 0.262, top: 0.24 },
+      blue: { left: 0.302, top: 0.295 },
+      moss: { left: 0.772, top: 0.357 },
+      gold: { left: 0.805, top: 0.405 },
+      rose: { left: 0.835, top: 0.435 },
     };
 
     const pins = Array.from(map.querySelectorAll<HTMLElement>(".mapPin"));
@@ -65,6 +65,9 @@ function PagesApp() {
       }
 
       shell.classList.toggle("is-zoomed", scale > 1.01);
+      zoomOutButton.disabled = scale <= 1.01;
+      zoomInButton.disabled = scale >= 3.99;
+      resetButton.disabled = scale <= 1.01;
     };
 
     const reset = () => {
@@ -78,17 +81,53 @@ function PagesApp() {
         anchor.pin.style.top = anchor.originalTop;
       }
       shell.classList.remove("is-zoomed");
+      zoomOutButton.disabled = true;
+      zoomInButton.disabled = false;
+      resetButton.disabled = true;
     };
+
+    const controls = document.createElement("div");
+    controls.className = "mapZoomControls";
+    controls.setAttribute("aria-label", "Map zoom controls");
+
+    const zoomOutButton = document.createElement("button");
+    zoomOutButton.type = "button";
+    zoomOutButton.className = "mapZoomButton";
+    zoomOutButton.textContent = "−";
+    zoomOutButton.setAttribute("aria-label", "Zoom out");
+    zoomOutButton.disabled = true;
+
+    const zoomInButton = document.createElement("button");
+    zoomInButton.type = "button";
+    zoomInButton.className = "mapZoomButton";
+    zoomInButton.textContent = "+";
+    zoomInButton.setAttribute("aria-label", "Zoom in");
 
     const resetButton = document.createElement("button");
     resetButton.type = "button";
     resetButton.className = "mapZoomReset";
     resetButton.textContent = "Reset map";
     resetButton.setAttribute("aria-label", "Reset map zoom and position");
+    resetButton.disabled = true;
+
+    zoomOutButton.addEventListener("click", () => {
+      scale = Math.max(1, scale / 1.5);
+      if (scale <= 1.01) {
+        reset();
+        return;
+      }
+      apply();
+    });
+    zoomInButton.addEventListener("click", () => {
+      scale = Math.min(4, scale * 1.5);
+      apply();
+    });
     resetButton.addEventListener("click", reset);
-    shell.appendChild(resetButton);
+    controls.append(zoomOutButton, zoomInButton, resetButton);
+    shell.appendChild(controls);
 
     const onWheel = (event: WheelEvent) => {
+      if (!event.ctrlKey && !event.metaKey) return;
       event.preventDefault();
       const nextScale = Math.max(1, Math.min(4, scale * (event.deltaY < 0 ? 1.14 : 0.88)));
       if (nextScale === scale) return;
@@ -101,6 +140,7 @@ function PagesApp() {
     };
 
     const onPointerDown = (event: PointerEvent) => {
+      if (event.button !== 0 || (event.target as Element).closest("button")) return;
       map.setPointerCapture?.(event.pointerId);
       pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       if (pointers.size === 2) {
@@ -161,7 +201,7 @@ function PagesApp() {
       map.removeEventListener("pointercancel", onPointerEnd);
       window.removeEventListener("resize", onResize);
       resetButton.removeEventListener("click", reset);
-      resetButton.remove();
+      controls.remove();
       image.style.transform = "";
       for (const anchor of pinAnchors) {
         anchor.pin.style.left = anchor.originalLeft;
@@ -174,8 +214,10 @@ function PagesApp() {
   return <AviaryJournal />;
 }
 
-createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <PagesApp />
-  </React.StrictMode>,
-);
+if (typeof document !== "undefined") {
+  createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+      <PagesApp />
+    </React.StrictMode>,
+  );
+}

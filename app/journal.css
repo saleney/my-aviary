@@ -55,3 +55,5 @@ html{scroll-behavior:smooth;scroll-snap-type:y proximity}.scrollChapter{min-heig
 .speciesCopy{min-height:105px}.speciesCopy h3{margin-top:0}.detailBlurb{margin:28px 0 0;font:18px/1.55 Georgia,serif;color:#526a5f}.detailBody dl{margin-top:32px}.journal footer p{max-width:760px;text-align:right;line-height:1.6}.journal footer p a{color:#e5b45d;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:720px){.speciesCopy{min-height:100px}.journal footer p{text-align:left}}
 @media(max-width:430px){.speciesCopy{min-height:0}.detailBlurb{font-size:17px}}
+
+.detailBackdrop{position:absolute;inset:0;border:0;background:transparent;cursor:default}.detailShade>.detail{position:relative;z-index:1}
