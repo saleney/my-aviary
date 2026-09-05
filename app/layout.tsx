@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { aviaryStats } from "./aviary-data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,7 +19,7 @@ export function generateMetadata(): Metadata {
   const image = `${origin}${basePath}/og.png`;
   const icon = `${origin}${basePath}/favicon.svg`;
   const title = "The Aviary — Birds I’ve met along the way";
-  const description = "A field journal of 51 real encounters, 28 species, and six regions—grown from Merlin and eBird.";
+  const description = `A field journal of ${aviaryStats.encounters} encounters, ${aviaryStats.species} species, and ${aviaryStats.regions} broad regions—grown from Merlin and eBird.`;
   return { title, description, icons:{icon,shortcut:icon}, openGraph:{title,description,images:[{url:image,width:1730,height:909,alt:"The Aviary field journal"}]}, twitter:{card:"summary_large_image",title,description,images:[image]} };
 }
 

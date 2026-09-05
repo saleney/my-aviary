@@ -38,3 +38,6 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# Raw Merlin/eBird exports contain exact locations and never belong in this public repository.
+/private-data/

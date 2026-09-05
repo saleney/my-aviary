@@ -1,0 +1,40 @@
+{
+  "regions": {
+    "US-CA": { "name": "California", "tone": "clay", "x": 17, "y": 34, "order": 1 },
+    "CA-ON": { "name": "Ontario", "tone": "sage", "x": 27, "y": 22, "order": 2 },
+    "US-NY": { "name": "New York", "tone": "blue", "x": 30, "y": 29, "order": 3 },
+    "CN-53": { "name": "Yunnan", "tone": "moss", "x": 77, "y": 35, "order": 4 },
+    "CN-44": { "name": "Guangdong", "tone": "gold", "x": 81, "y": 41, "order": 5 },
+    "HK-": { "name": "Hong Kong", "tone": "rose", "x": 84, "y": 43, "order": 6 }
+  },
+  "birdNotes": {
+    "Allen's Hummingbird": "A compact coppery-and-green hummingbird of coastal scrub, with narrow outer tail feathers.",
+    "American Robin": "A gray-brown thrush with a warm orange belly that runs and pauses across lawns.",
+    "Anna's Hummingbird": "A green-and-gray hummingbird; males flash an iridescent rose-pink crown and throat.",
+    "Barn Swallow": "A blue-backed aerial hunter with an orange throat and a deeply forked tail.",
+    "Bewick's Wren": "A lively brown wren with a bold white eyebrow and a long, often upright tail.",
+    "Black Phoebe": "A sooty flycatcher with a white belly that pumps its tail from low waterside perches.",
+    "Black-capped Chickadee": "A tiny acrobat with a black cap and bib, white cheeks, and familiar chick-a-dee calls.",
+    "Blyth's Leaf Warbler": "A yellow-green forest warbler with a pale crown stripe and alternating wing flicks.",
+    "Dark-eyed Junco": "A ground-feeding sparrow with a pale bill and white outer tail feathers.",
+    "Eurasian Tree Sparrow": "A rufous-capped sparrow with a black cheek spot, often moving in noisy flocks.",
+    "House Finch": "A social, streaky finch; males wear rosy color around the face and breast.",
+    "House Sparrow": "A chunky, stout-billed sparrow closely tied to buildings, streets, and human activity.",
+    "Lesser Goldfinch": "A tiny seed-eating finch; males are yellow with a black cap and white wing patch.",
+    "Little Grebe": "A compact diving bird of reed-edged wetlands, with rusty neck sides in breeding plumage.",
+    "Orange-crowned Warbler": "A plain olive warbler whose namesake orange crown is usually hidden from view.",
+    "Pacific Wren": "A tiny barred-brown wren that moves mouse-like through mossy forest understory.",
+    "Purple Finch": "A chunky forest finch; males carry a raspberry wash across the head and breast.",
+    "Red-masked Parakeet": "A long-tailed green parakeet with a red face, usually announced by loud screeches.",
+    "Red-shouldered Hawk": "A richly barred woodland hawk with checkered wings and a rising, whistled call.",
+    "Red-whiskered Bulbul": "A tall-crested songbird with red cheek and undertail patches, often seen in pairs.",
+    "Ring-billed Gull": "A sociable, medium-sized gull named for the black band around its yellow bill.",
+    "Song Sparrow": "A heavily streaked sparrow of brushy edges, with songs that vary across its range.",
+    "Spotted Towhee": "A black, white, and rufous sparrow that scratches noisily through leaf litter.",
+    "Steller's Jay": "A dark-crested blue jay of evergreen forests, known for bold curiosity and varied calls.",
+    "Swinhoe's White-eye": "A small olive-yellow bird with a bright white eyering, active from understory to canopy.",
+    "Western Bluebird": "A blue-and-rust thrush that drops from low perches to catch insects on the ground.",
+    "White-crowned Sparrow": "Bold black-and-white head stripes and a sweet whistled opening make it distinctive.",
+    "Wilson's Warbler": "A bright yellow, restless warbler; males wear a small black cap."
+  }
+}
