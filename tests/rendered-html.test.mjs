@@ -46,6 +46,8 @@ test("keeps the public field journal assets and accessibility hooks intact", asy
   assert.match(journal, /role="dialog"/);
   assert.match(journal, /aria-modal="true"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(css, /\.encounterMap\{width:100%;height:auto;aspect-ratio:1280\/650\}/);
+  assert.match(css, /\.mapPin\{transform:translate\(-50%,-50%\)\}/);
   assert.doesNotMatch(pagesEntry, /wheel|pointercapture|mapZoom/i);
   assert.doesNotMatch(pagesCss, /mapZoom|is-zoomed/i);
   const regions = JSON.parse(curationSource).regions;

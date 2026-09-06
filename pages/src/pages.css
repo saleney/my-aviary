@@ -6,6 +6,8 @@
 .mapShell{position:relative;overflow:hidden}
 .encounterMap{touch-action:pan-y;cursor:default}
 .mapPin::after{content:"";position:absolute;inset:-13px}
+.mapPin{transform:translate(-50%,-50%)}
+.mapPin:hover,.mapPin:focus-visible,.mapPin.active{transform:translate(-50%,-50%) scale(1.28)}
 .mapPin span{z-index:1}
 .mapPin.sage span,.mapPin.moss span{left:auto;right:22px;top:-8px;transform:none}
 .mapPin.blue span,.mapPin.rose span{left:22px;top:19px;transform:none}
