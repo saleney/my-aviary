@@ -32,9 +32,11 @@ test("server-renders the Aviary experience", async () => {
 });
 
 test("keeps the public field journal assets and accessibility hooks intact", async () => {
-  const [journal, css] = await Promise.all([
+  const [journal, css, pagesEntry, pagesCss] = await Promise.all([
     readFile(new URL("../app/AviaryJournal.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/journal.css", import.meta.url), "utf8"),
+    readFile(new URL("../pages/src/main.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../pages/src/pages.css", import.meta.url), "utf8"),
   ]);
 
   assert.match(journal, /aria-label="Choose a bird"/);
@@ -43,6 +45,8 @@ test("keeps the public field journal assets and accessibility hooks intact", asy
   assert.match(journal, /role="dialog"/);
   assert.match(journal, /aria-modal="true"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.doesNotMatch(pagesEntry, /wheel|pointercapture|mapZoom/i);
+  assert.doesNotMatch(pagesCss, /mapZoom|is-zoomed/i);
   await access(new URL("../public/world-map.png", import.meta.url));
   await access(new URL("../public/birds/american-robin.jpg", import.meta.url));
   await access(new URL("../public/og.png", import.meta.url));

@@ -1,11 +1,11 @@
 {
   "regions": {
-    "US-CA": { "name": "California", "tone": "clay", "x": 17, "y": 34, "order": 1 },
-    "CA-ON": { "name": "Ontario", "tone": "sage", "x": 27, "y": 22, "order": 2 },
-    "US-NY": { "name": "New York", "tone": "blue", "x": 30, "y": 29, "order": 3 },
-    "CN-53": { "name": "Yunnan", "tone": "moss", "x": 77, "y": 35, "order": 4 },
-    "CN-44": { "name": "Guangdong", "tone": "gold", "x": 81, "y": 41, "order": 5 },
-    "HK-": { "name": "Hong Kong", "tone": "rose", "x": 84, "y": 43, "order": 6 }
+    "US-CA": { "name": "California", "tone": "clay", "x": 16, "y": 29, "order": 1 },
+    "CA-ON": { "name": "Ontario", "tone": "sage", "x": 26.2, "y": 24, "order": 2 },
+    "US-NY": { "name": "New York", "tone": "blue", "x": 30.2, "y": 29.5, "order": 3 },
+    "CN-53": { "name": "Yunnan", "tone": "moss", "x": 77.2, "y": 35.7, "order": 4 },
+    "CN-44": { "name": "Guangdong", "tone": "gold", "x": 80.5, "y": 40.5, "order": 5 },
+    "HK-": { "name": "Hong Kong", "tone": "rose", "x": 83.5, "y": 43.5, "order": 6 }
   },
   "birdNotes": {
     "Allen's Hummingbird": "A compact coppery-and-green hummingbird of coastal scrub, with narrow outer tail feathers.",

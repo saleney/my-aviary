@@ -323,43 +323,43 @@ export const journeys: Journey[] = [
     "name": "California",
     "count": 31,
     "tone": "clay",
-    "x": 17,
-    "y": 34
+    "x": 16,
+    "y": 29
   },
   {
     "name": "Ontario",
     "count": 2,
     "tone": "sage",
-    "x": 27,
-    "y": 22
+    "x": 26.2,
+    "y": 24
   },
   {
     "name": "New York",
     "count": 2,
     "tone": "blue",
-    "x": 30,
-    "y": 29
+    "x": 30.2,
+    "y": 29.5
   },
   {
     "name": "Yunnan",
     "count": 10,
     "tone": "moss",
-    "x": 77,
-    "y": 35
+    "x": 77.2,
+    "y": 35.7
   },
   {
     "name": "Guangdong",
     "count": 5,
     "tone": "gold",
-    "x": 81,
-    "y": 41
+    "x": 80.5,
+    "y": 40.5
   },
   {
     "name": "Hong Kong",
     "count": 1,
     "tone": "rose",
-    "x": 84,
-    "y": 43
+    "x": 83.5,
+    "y": 43.5
   }
 ];
 

@@ -2,25 +2,13 @@
 /* Public GitHub Pages must remain usable even if chapter focus animation does not fire. */
 .scrollChapter{opacity:1!important;transform:none!important}
 
-/* Interactive map zoom/pan for the public build. */
+/* Stable broad-region overview: the world and every pin remain visible. */
 .mapShell{position:relative;overflow:hidden}
 .encounterMap{touch-action:pan-y;cursor:default}
-.mapShell.is-zoomed .encounterMap{cursor:grab}
-.mapShell.is-zoomed .encounterMap{touch-action:none}
-.mapShell.is-zoomed .encounterMap:active{cursor:grabbing}
-.worldMap{will-change:transform;transform-origin:center center;transition:transform .08s linear}
-.mapPin{will-change:left,top}
 .mapPin::after{content:"";position:absolute;inset:-13px}
 .mapPin span{z-index:1}
 .mapPin.sage span,.mapPin.moss span{left:auto;right:22px;top:-8px;transform:none}
 .mapPin.blue span,.mapPin.rose span{left:22px;top:19px;transform:none}
 .mapPin.gold span{left:auto;right:17px;top:25px;transform:none}
 .mapPopup{z-index:20}
-.mapZoomControls{position:absolute;left:14px;bottom:14px;z-index:24;display:flex;align-items:center;border:1px solid #15382c33;background:#fbf8efee;border-radius:999px;box-shadow:0 6px 20px #15382c14;overflow:hidden}
-.mapZoomControls button{min-width:44px;min-height:44px;border:0;border-right:1px solid #15382c24;background:transparent;color:#15382c;cursor:pointer}
-.mapZoomControls button:last-child{border-right:0}
-.mapZoomControls button:disabled{opacity:.38;cursor:default}
-.mapZoomButton{font:700 18px/1 Arial,sans-serif}
-.mapZoomReset{padding:9px 13px;font:700 9px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
-.mapZoomControls button:focus-visible{outline:2px solid #15382c;outline-offset:-3px}
 @media(max-width:720px){.mapPin.rose span{left:auto;right:22px;top:38px;transform:none}}
