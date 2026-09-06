@@ -8,6 +8,8 @@ The experience begins with a map of where I heard each bird, follows the rhythm 
 
 Exact encounter coordinates are intentionally not published. Locations are presented only as broad regions.
 
+The map uses the Robinson projection centered at 10° east. Pin percentages in `data/aviary-curation.json` must use that same centerline; they are broad regional anchors, not encounter coordinates.
+
 ## Refresh from Merlin/eBird
 
 Keep the downloaded CSV outside this public repository. The refresh has two deliberate steps:
@@ -39,4 +41,4 @@ npm run dev
 
 ## Sources
 
-Encounter history comes from my Merlin life list. Bird notes reference the Cornell Lab of Ornithology and eBird.
+Encounter history comes from my Merlin life list. Bird notes reference the Cornell Lab of Ornithology and eBird. The world-map artwork follows Wikimedia Commons' public-domain `BlankMap-World.svg` Robinson map.

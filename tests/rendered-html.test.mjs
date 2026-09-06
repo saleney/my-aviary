@@ -54,12 +54,12 @@ test("keeps the public field journal assets and accessibility hooks intact", asy
   assert.deepEqual(
     Object.fromEntries(Object.entries(regions).map(([code, region]) => [code, [region.x, region.y]])),
     {
-      "US-CA": [19.1, 27.1],
-      "CA-ON": [29.5, 19.1],
-      "US-NY": [31.1, 23.4],
-      "CN-53": [77.3, 34.5],
-      "CN-44": [80.7, 35.7],
-      "HK-": [81, 36.2],
+      "US-CA": [16.5, 27.1],
+      "CA-ON": [27.1, 19.1],
+      "US-NY": [28.6, 23.4],
+      "CN-53": [74.6, 34.5],
+      "CN-44": [78, 35.7],
+      "HK-": [78.2, 36.2],
     },
   );
   await access(new URL("../public/world-map.png", import.meta.url));
