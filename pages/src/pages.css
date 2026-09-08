@@ -1,4 +1,5 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3f0e6;color:#15382c;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400;500&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0efeb;color:#252622;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}
 /* Public GitHub Pages must remain usable even if chapter focus animation does not fire. */
 .scrollChapter{opacity:1!important;transform:none!important}
 
@@ -14,3 +15,27 @@
 .mapPin.gold span{left:auto;right:17px;top:25px;transform:none}
 .mapPopup{z-index:20}
 @media(max-width:720px){.mapPin.rose span{left:auto;right:22px;top:38px;transform:none}}
+
+/* Checkout continuation: Aviary as an observational field-study room. */
+.jhero::before{content:"FIELD NOTE / OBSERVED";position:absolute;z-index:2;left:clamp(22px,7vw,105px);top:116px;font:500 9px/1.4 'DM Mono',monospace;letter-spacing:.16em;color:#72736c}
+.places{background:#e7e3d9}
+.placesHead::before{content:"ENCOUNTER MAP / BROAD REGIONS";display:block;margin-bottom:18px;font:500 9px/1.4 'DM Mono',monospace;letter-spacing:.15em;color:#72736c}
+.placesHead h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;color:#252622}
+.mapShell{border-color:#25262230;background:#d9ddd2}
+.encounterMap{background:#d9ddd2}
+.worldMap{opacity:.52;mix-blend-mode:multiply;filter:sepia(.15) saturate(.65)}
+.mapPin{background:#98543f;color:#252622;box-shadow:0 0 0 4px #f0efebd9}
+.mapPin:hover,.mapPin:focus-visible,.mapPin.active{box-shadow:0 0 0 6px #f0efebf2}
+.mapPin span{border:1px solid #25262224;border-radius:0;background:#f0efebed;font:500 8px 'DM Mono',monospace}
+.mapPin.active span{background:#252622;color:#f0efeb}
+.mapPopup{background:#252622;color:#f0efeb;box-shadow:0 22px 60px #25262238}
+.mapPopup .kicker,.mapBirdLink span{color:#c98766}
+.mapPopupStats b,.mapPopup li{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400}
+.guide::before{content:"SPECIMEN INDEX / FIELD GUIDE";display:block;margin-bottom:18px;font:500 9px/1.4 'DM Mono',monospace;letter-spacing:.15em;color:#72736c}
+.toolbar .birdPicker{font-family:'Cormorant Garamond',Georgia,serif;color:#252622;border-color:#2526222a}
+.toolbar .regionPicker,.toolbar select{border-color:#2526222a;color:#252622}
+.resultCount::after{content:"  /  TOUCH GENTLY";color:#98543f}
+.journeyMeasure,.yearTrail b{font-family:'DM Mono',monospace;font-weight:500}
+.detailBlurb{font-family:'Cormorant Garamond',Georgia,serif;color:#5f605a}
+.journal footer p a{color:#c98766}
+@media(max-width:720px){.jhero::before{top:98px}.placesHead::before,.guide::before{font-size:8px}.mapPopup{max-height:76%}}
