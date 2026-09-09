@@ -61,3 +61,9 @@ html{scroll-behavior:smooth;scroll-snap-type:y proximity}.scrollChapter{min-heig
 /* Anchor each marker by its center so its percentage is the geographic point. */
 .mapPin{transform:translate(-50%,-50%)}
 .mapPin:hover,.mapPin:focus-visible,.mapPin.active{transform:translate(-50%,-50%) scale(1.28)}
+
+/* A quiet route back to the shared studio. */
+.jnav .playgroundLink{color:#98543f;font-size:10px;letter-spacing:.02em;text-transform:none;display:inline-flex;align-items:center;min-height:44px}
+.jnav .playgroundLink:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:720px){.jnav>div .playgroundLink{display:inline-flex;font-size:9px}.jnav{gap:12px}}
+@media(prefers-reduced-motion:reduce){.journal *,.journal *::before,.journal *::after{animation:none!important;transition:none!important}}
