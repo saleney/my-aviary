@@ -34,7 +34,6 @@
 .guide::before{content:"SPECIMEN INDEX / FIELD GUIDE";display:block;margin-bottom:18px;font:500 9px/1.4 'DM Mono',monospace;letter-spacing:.15em;color:#72736c}
 .toolbar .birdPicker{font-family:'Cormorant Garamond',Georgia,serif;color:#252622;border-color:#2526222a}
 .toolbar .regionPicker,.toolbar select{border-color:#2526222a;color:#252622}
-.resultCount::after{content:"  /  TOUCH GENTLY";color:#98543f}
 .journeyMeasure,.yearTrail b{font-family:'DM Mono',monospace;font-weight:500}
 .detailBlurb{font-family:'Cormorant Garamond',Georgia,serif;color:#5f605a}
 .journal footer p a{color:#c98766}
